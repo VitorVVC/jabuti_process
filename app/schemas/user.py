@@ -9,17 +9,17 @@ class UserBase(BaseModel):
         ...,
         min_length=2,
         max_length=50,
-        example="Vitor Vargas"
+        example="John Dee"
     )
     email: EmailStr = Field(
         ...,
-        example="vitor@jabuti.com"
+        example="example@gmail.com"
     )
     age: int = Field(
         ...,
         ge=0,
         le=150,
-        example=20
+        example=33
     )
 
 
@@ -32,17 +32,17 @@ class UserUpdate(BaseModel):
         default=None,
         min_length=2,
         max_length=50,
-        example="Vitor Vargas Cardoso"
+        example="New Name"
     )
     email: Optional[EmailStr] = Field(
         default=None,
-        example="vitorvargas@jabuti.com"
+        example="new_example@gmail.com"
     )
     age: Optional[int] = Field(
         default=None,
         ge=0,
         le=150,
-        example=21
+        example=34
     )
 
 
