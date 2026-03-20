@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     REDIS_HOST: str = "cache"
     REDIS_PORT: int = 6379
     REDIS_DB: int = 0
+    REDIS_CACHE_TTL_SECONDS: int = 600
 
     @property
     def database_url(self) -> str:
