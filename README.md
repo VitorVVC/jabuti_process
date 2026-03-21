@@ -7,7 +7,7 @@ API RESTful desenvolvida como parte de um desafio técnico, utilizando FastAPI, 
 
 - Python 3.11 
 - FastAPI 
-- Alchemy 
+- SQLAlchemy 
 - PostgreSQL 
 - Redis 
 - Docker & Docker Compose 
@@ -87,7 +87,7 @@ A API utiliza Redis para otimizar leitura de dados.
 - DELETE → invalida usuário e listas
 
 ### 🔑 Padrão das chaves
-```code
+```bash 
 user:{id}
 users:list:{limit}:{offset}
 ```
@@ -101,6 +101,26 @@ users:list:{limit}:{offset}
 
 ```bash
 http://localhost:8000/docs
+```
+
+## 🔐 Variáveis de ambiente
+
+Crie um arquivo `.env` na raiz do projeto:
+
+```env
+APP_NAME=Jabuti CRUD API
+APP_VERSION=1.0.0
+
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_HOST=db
+POSTGRES_PORT=5432
+POSTGRES_DB=jabuti_db
+
+REDIS_HOST=cache
+REDIS_PORT=6379
+REDIS_DB=0
+REDIS_CACHE_TTL_SECONDS=600
 ```
 
 ### Fluxo recomendado:
