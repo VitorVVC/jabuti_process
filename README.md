@@ -31,16 +31,36 @@ app/
 
 ### 1. Clone o repositório
 ```bash
-git clone <SEU_REPO>
+git clone git@github.com:VitorVVC/jabuti_process.git
 cd jabuti_startproject
 ```
 
-### 2. Suba os containers
+### 2. Variáveis de ambiente
+
+Crie um arquivo `.env` na raiz do projeto:
+
+```env
+APP_NAME=Jabuti CRUD API
+APP_VERSION=1.0.0
+
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_HOST=db
+POSTGRES_PORT=5432
+POSTGRES_DB=jabuti_db
+
+REDIS_HOST=cache
+REDIS_PORT=6379
+REDIS_DB=0
+REDIS_CACHE_TTL_SECONDS=600
+```
+
+### 3. Suba os containers
 ```bash
 docker compose up --build
 ```
 
-### 3. Acesse a API
+### 4. Acesse a API
 
 - API: http://localhost:8000
 - Swagger: http://localhost:8000/docs
@@ -103,25 +123,6 @@ users:list:{limit}:{offset}
 http://localhost:8000/docs
 ```
 
-## 🔐 Variáveis de ambiente
-
-Crie um arquivo `.env` na raiz do projeto:
-
-```env
-APP_NAME=Jabuti CRUD API
-APP_VERSION=1.0.0
-
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
-POSTGRES_HOST=db
-POSTGRES_PORT=5432
-POSTGRES_DB=jabuti_db
-
-REDIS_HOST=cache
-REDIS_PORT=6379
-REDIS_DB=0
-REDIS_CACHE_TTL_SECONDS=600
-```
 
 ### Fluxo recomendado:
 
